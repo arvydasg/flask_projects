@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Biudžeto įrašai: </h1>
+{%for irasas in biudzetas%}
+<p>{{irasas}}</p>
+<a href="{{ url_for('irasas_delete', id=irasas['id']) }}">Ištrinti</a>
+<a href="{{ url_for('irasas_update', id=irasas['id']) }}">Redaguoti</a>
+<hr>
+{% endfor %}
+{% endblock %}
